@@ -466,6 +466,7 @@ public:
    {
       return (fType == EFType::kTemplVec) || (fType == EFType::kFormula && fFormula && fFormula->IsVectorized());
    }
+   /// Retrieve the stored value of Chi2
    Double_t     GetChisquare() const
    {
       return fChisquare;
@@ -634,6 +635,7 @@ public:
    virtual void     ReleaseParameter(Int_t ipar);
    virtual void     Save(Double_t xmin, Double_t xmax, Double_t ymin, Double_t ymax, Double_t zmin, Double_t zmax);
    void     SavePrimitive(std::ostream &out, Option_t *option = "") override;
+   /// Set value of Chi2. This value is used by other methods of the class, such as GetProb.
    virtual void     SetChisquare(Double_t chi2)
    {
       fChisquare = chi2;
